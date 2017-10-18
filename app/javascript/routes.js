@@ -1,9 +1,9 @@
 angular.module('myApp').config(function($routeProvider) {
    $routeProvider
        .when('/', {
-           redirectTo: '/home'
+           redirectTo: '/menu'
        })
-       .when('/home', {
+       .when('/menu', {
            templateUrl: 'views/menu.html',
            controller: 'MenuController',
            controllerAs: 'menuCtrl'
