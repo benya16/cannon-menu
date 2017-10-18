@@ -8,5 +8,10 @@ angular.module('myApp').config(function($routeProvider) {
            controller: 'MenuController',
            controllerAs: 'menuCtrl'
        })
+       .when('/day', {
+           templateUrl: 'views/day.html',
+           controller: 'DayController',
+           controllerAs: 'dayCtrl'
+       })
        .otherwise({redirectTo: '/menu'});
 });
