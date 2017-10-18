@@ -4,9 +4,9 @@ angular.module('myApp').config(function($routeProvider) {
            redirectTo: '/home'
        })
        .when('/home', {
-           templateUrl: 'views/home.html',
-           controller: 'HomeController',
-           controllerAs: 'homeCtrl'
+           templateUrl: 'views/menu.html',
+           controller: 'MenuController',
+           controllerAs: 'menuCtrl'
        })
-       .otherwise({redirectTo: '/home'});
+       .otherwise({redirectTo: '/menu'});
 });
