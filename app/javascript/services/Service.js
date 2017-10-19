@@ -1,4 +1,4 @@
-angular.module('myApp').factory('cannon-menu-service', function($http, $q) {
+angular.module('myApp').factory('cannonMenuService', function($http, $q) {
   
   function getMenuPromise(date, meal) {
           
