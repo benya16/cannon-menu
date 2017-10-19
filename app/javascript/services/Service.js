@@ -1,4 +1,4 @@
-angular.module('myApp').factory('cannon-menu-service', function($http, $q) {
+angular.module('myApp').factory('cannonMenuService', function($http, $q) {
   
   function getMenuPromise(date, meal) {
           
@@ -17,7 +17,7 @@ angular.module('myApp').factory('cannon-menu-service', function($http, $q) {
         var mealId = result
         var menuUrl = "http://dining.byu.edu/commons/menu_pass.php?servedate=" +
           formattedDate +
-          "&mealname=LUNCH&mealid=" + mealId +
+          "&mealname=" + meal + "&mealid=" + mealId +
           "&viewname=MenuItemsJSON"
         return $http.get(proxyurl + menuUrl)
       }).then(function(result) {
