@@ -1,12 +1,20 @@
 angular.module('myApp').config(function($routeProvider) {
    $routeProvider
        .when('/', {
-           redirectTo: '/home'
+           redirectTo: '/menu',
+           activetab: 'day'
        })
-       .when('/home', {
-           templateUrl: 'views/home.html',
-           controller: 'HomeController',
-           controllerAs: 'homeCtrl'
+       .when('/menu', {
+           templateUrl: 'views/menu.html',
+           controller: 'MenuController',
+           controllerAs: 'menuCtrl',
+           activetab: 'menu'
        })
-       .otherwise({redirectTo: '/home'});
+       .when('/day', {
+           templateUrl: 'views/day.html',
+           controller: 'DayController',
+           controllerAs: 'dayCtrl',
+           activetab: 'day'
+       })
+       .otherwise({redirectTo: '/menu'});
 });
