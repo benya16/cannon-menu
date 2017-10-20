@@ -25,8 +25,11 @@
     });
 
     this.changeMeal = function(meal) {
+        console.log("Change meal: " + meal);
         cannonMenuService.getWeeklyMealMenu(self.today, meal).then(function (result) {
             self.weeklyMenu = result;
+
+            console.log(result);
 
             self.weeklyMenus = [];
             for(var i = 0; i < self.weeklyMenu.length; ++i) {
