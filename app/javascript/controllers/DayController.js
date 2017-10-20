@@ -2,8 +2,6 @@
 
     var self = this;
   
-  
-  debugger
     self.day = new Date($routeParams.day.replace(/"/g, ''));
     // if(self.day == undefined) {
     //     self.day = new Date();
