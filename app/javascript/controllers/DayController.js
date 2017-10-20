@@ -3,9 +3,11 @@
     var self = this;
 
     self.day = Date.parse($routeParams.day);
-    if(self.day == undefined || isNaN(self.day)) {
-        self.day = new Date();
-    }
+    // if(self.day == undefined) {
+    //     self.day = new Date();
+    // }
+
+    console.log(self.day);
 
     cannonMenuService.getDailyMenu(self.day).then(function (result) {
         self.meals = result;

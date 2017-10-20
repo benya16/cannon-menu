@@ -11,63 +11,26 @@
 
     <div class="col-md-10">
 
-        <a href="#/day"><h2>WEDNESDAY 2017-10-18</h2></a>
-        <table class="table table-striped table-hover">
-            <thead>
-            <tr>
-                <th>Station</th>
-                <th>Menu Items</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Euro</td>
-                <td>Chicken Pesto Sandwich, Parmesan Chips, Country Trio Vegetables</td>
-            </tr>
-            <tr>
-                <td>Expo</td>
-                <td>Linguine Pasta, Pomodoro Sauce, Garlic Cheese Breadstick</td>
-            </tr>
-            <tr>
-                <td>Grill</td>
-                <td>1/4 Pound Hamburger, 1/4 lb Cheeseburger, Jalapeno Popper, Sweet Chili Sauce, Twister Fries</td>
-            </tr>
-            <tr>
-                <td>Fusion</td>
-                <td>Stuffed Pepper Casserole, Chicken Poblano Soup, Minestrone Soup, New England Clam Chowder</td>
-            </tr>
-            </tbody>
+        <div ng-repeat="menu in menuCtrl.weeklyMenus">
 
-        </table>
+            <a href="#/day/{{ menu.date }}"><h2>{{ menu.date }}</h2></a>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Menu Items</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="recipe in menu">
+                    <td>{{ recipe.category }}</td>
+                    <td>{{ recipe.shortname }}</td>
+                </tr>
+                </tbody>
 
-        <a href="#/day"><h2>THURSDAY 2017-10-19</h2></a>
-        <table class="table table-striped table-hover">
-            <thead>
-            <tr>
-                <th>Station</th>
-                <th>Menu Items</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Euro</td>
-                <td>Chicken Pesto Sandwich, Parmesan Chips, Country Trio Vegetables</td>
-            </tr>
-            <tr>
-                <td>Expo</td>
-                <td>Linguine Pasta, Pomodoro Sauce, Garlic Cheese Breadstick</td>
-            </tr>
-            <tr>
-                <td>Grill</td>
-                <td>1/4 Pound Hamburger, 1/4 lb Cheeseburger, Jalapeno Popper, Sweet Chili Sauce, Twister Fries</td>
-            </tr>
-            <tr>
-                <td>Fusion</td>
-                <td>Stuffed Pepper Casserole, Chicken Poblano Soup, Minestrone Soup, New England Clam Chowder</td>
-            </tr>
-            </tbody>
+            </table>
 
-        </table>
+        </div>
 
     </div>
 </div>
