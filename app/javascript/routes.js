@@ -10,7 +10,7 @@ angular.module('myApp').config(function($routeProvider) {
            controllerAs: 'menuCtrl',
            activetab: 'menu'
        })
-       .when('/day', {
+       .when('/day/:day', {
            templateUrl: 'views/day.html',
            controller: 'DayController',
            controllerAs: 'dayCtrl',
