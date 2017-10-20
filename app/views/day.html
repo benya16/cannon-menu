@@ -1,24 +1,30 @@
-<h1>{{ dayCtrl.meals[0].date }}</h1>
+<div ng-hide="dayCtrl.loading">
+    <h1>{{ dayCtrl.meals[0].date }}</h1>
 
-<div ng-repeat="menu in dayCtrl.menus">
+    <div ng-repeat="menu in dayCtrl.menus">
 
-<h2>{{ menu.meal }}</h2>
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>Station</th>
-            <th>Menu Items</th>
-        </tr>
-        </thead>
-        <tbody>
+        <h2>{{ menu.meal }}</h2>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Station</th>
+                <th>Menu Items</th>
+            </tr>
+            </thead>
+            <tbody>
 
-        <tr ng-repeat="recipe in menu">
-            <td>{{ recipe.category }}</td>
-            <td>{{ recipe.shortname }}</td>
-        </tr>
+            <tr ng-repeat="recipe in menu">
+                <td>{{ recipe.category }}</td>
+                <td>{{ recipe.shortname }}</td>
+            </tr>
 
-        </tbody>
+            </tbody>
 
-    </table>
+        </table>
 
+    </div>
+</div>
+
+<div ng-show="dayCtrl.loading">
+    <h2>Loading Menu!</h2>
 </div>

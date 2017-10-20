@@ -3,9 +3,13 @@
     var self = this;
     self.today = new Date();
 
+    self.loading = true;
+
 
     cannonMenuService.getWeeklyMealMenu(self.today).then(function (result) {
+        self.loading = false;
         self.weeklyMenu = result;
+
 
         // console.log("Result: ", result);
 
@@ -26,7 +30,9 @@
 
     this.changeMeal = function(meal) {
         console.log("Change meal: " + meal);
+        self.loading = true;
         cannonMenuService.getWeeklyMealMenu(self.today, meal).then(function (result) {
+            self.loading = false;
             self.weeklyMenu = result;
 
             console.log(result);

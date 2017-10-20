@@ -1,6 +1,8 @@
 (angular.module('myApp').controller('DayController', ['cannonMenuService', '$routeParams', function(cannonMenuService, $routeParams) {
 
     var self = this;
+
+    self.loading = true;
   
     self.day = new Date($routeParams.day.replace(/"/g, ''));
     // if(self.day == undefined) {
@@ -10,6 +12,7 @@
     console.log(self.day);
 
     cannonMenuService.getDailyMenu(self.day).then(function (result) {
+        self.loading = false;
         self.meals = result;
         self.menus = [];
         for(var i = 0; i < self.meals.length; ++i) {
