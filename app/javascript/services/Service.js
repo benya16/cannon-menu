@@ -43,7 +43,10 @@ angular.module('myApp').factory('cannonMenuService', function($http, $q) {
       
       var menuObj = {}
       var days = numDays || 7
-      var date = startDate ||  new Date()
+      var date = new Date()
+      if (startDate) {
+        date = new Date(startDate.getTime())
+      }
       var mealsArray = theMealArray || ['LUNCH']
       var mealId = 0
       var promises = [];
