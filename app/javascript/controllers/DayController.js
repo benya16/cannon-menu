@@ -1,8 +1,8 @@
 (angular.module('myApp').controller('DayController', ['cannonMenuService', '$routeParams', function(cannonMenuService, $routeParams) {
 
     var self = this;
-
-    self.day = Date.parse($routeParams.day);
+  
+    self.day = new Date($routeParams.day.replace(/"/g, ''));
     // if(self.day == undefined) {
     //     self.day = new Date();
     // }
