@@ -43,13 +43,9 @@ angular.module('myApp').factory('cannonMenuService', function($http, $q) {
       
       var menuObj = {}
       var days = numDays || 7
-      var date = new Date()
+      var date = startDate ||  new Date()
       var mealsArray = theMealArray || ['LUNCH']
       var mealId = 0
-      if (startDate) {
-        date.setDate(startDate)
-      }
-      
       var promises = [];
       
       for (var i = 0; i < days; i++) {
